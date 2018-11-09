@@ -1,0 +1,31 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+
+.carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@media (max-width: 979px) {
+    #myCarousel.carousel img {
+    width: 100%;
+    height: auto;
+
+}
+}
+
+@media (max-width: 470px) {
+#myCarousel.carousel img {
+    max-width:300%;
+    width:150%;
+    min-height: 300px;
+}
+}
