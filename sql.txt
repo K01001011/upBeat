@@ -158,3 +158,19 @@ insert into Tracks values ("We Will Rock You", NULL, "https://www.youtube.com/wa
 ("Killer Queen", NULL, "https://www.youtube.com/watch?v=2ZBtPf7FOoM", "Queen", "Best of Queen"),
 ("Bohemian Rhapsody", NULL, "https://www.youtube.com/watch?v=fJ9rUzIMcZQ", "Queen", "Best of Queen"),
 ("I Want To Break Free", NULL, "https://www.youtube.com/watch?v=f4Mc-NYPHaQ", "Queen", "Best of Queen");
+
+
+
+delimiter //
+ create PROCEDURE proc_track(IN mtitle varchar(50), IN mname varchar(50))
+    begin
+    declare count int;
+    declare cur1 cursor for select count(*) from Tracks where Name = mname and Title = mtitle;
+    open cur1;
+    fetch cur1 into count;
+    update Album set No_of_Tracks = count where Name = mname and Title = mtitle;
+    close cur1;
+    end;//
+delimiter ;
+
+create TRIGGER calc_track after insert on Tracks for each row CALL proc_track(new.Title, new.Name);

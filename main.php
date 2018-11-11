@@ -102,7 +102,7 @@
                 <?php
                   $sel_query="select * from Artist where Band is NULL;";
                   $result = mysqli_query($con,$sel_query);?>
-                <div class="col" >
+                <div class="col" align="center">
                   <?php $row = mysqli_fetch_assoc($result);
                   $loc = $row["Picture"];
                   $name = $row["Name"];?>
@@ -110,7 +110,7 @@
                   <img src="img/<?php echo $loc; ?>" class="img-responsive" alt="" height="200" width="200">
                   </a>
                 </div>
-                <div class="col" >
+                <div class="col" align="center">
                   <?php $row = mysqli_fetch_assoc($result);
                   $loc = $row["Picture"];
                   $name = $row["Name"];?>
@@ -118,7 +118,7 @@
                   <img src="img/<?php echo $loc; ?>" class="img-responsive" alt="" height="200" width="200">
                   </a>
                 </div>
-                <div class="col" >
+                <div class="col" align="center">
                   <?php $row = mysqli_fetch_assoc($result);
                   $loc = $row["Picture"];
                   $name = $row["Name"];?>
@@ -126,7 +126,7 @@
                   <img src="img/<?php echo $loc; ?>" class="img-responsive" alt="" height="200" width="200">
                   </a>
                 </div>
-                <div class="col" >
+                <div class="col" align="center">
                   <?php $row = mysqli_fetch_assoc($result);
                   $loc = $row["Picture"];
                   $name = $row["Name"];?>
@@ -150,7 +150,7 @@
                 <?php
                   $sel_query="select * from Album;";
                   $result = mysqli_query($con,$sel_query);?>
-                <div class="col" >
+                <div class="col" align="center">
                   <?php $row = mysqli_fetch_assoc($result);
                   $Aloc = $row["Album_Pic"];
                   $Atitle = $row["Title"];
@@ -159,7 +159,7 @@
                   <img src="img/<?php echo $Aloc; ?>" class="img-responsive" alt="" height="200" width="200">
                   </a>
                 </div>
-                <div class="col" >
+                <div class="col" align="center">
                   <?php $row = mysqli_fetch_assoc($result);
                   $Aloc = $row["Album_Pic"];
                   $Atitle = $row["Title"];
@@ -168,7 +168,7 @@
                   <img src="img/<?php echo $Aloc; ?>" class="img-responsive" alt="" height="200" width="200">
                   </a>
                 </div>
-                <div class="col" >
+                <div class="col" align="center">
                   <?php $row = mysqli_fetch_assoc($result);
                   $Aloc = $row["Album_Pic"];
                   $Atitle = $row["Title"];
@@ -177,7 +177,7 @@
                   <img src="img/<?php echo $Aloc; ?>" class="img-responsive" alt="" height="200" width="200">
                   </a>
                 </div>
-                <div class="col" >
+                <div class="col" align="center">
                   <?php $row = mysqli_fetch_assoc($result);
                   $Aloc = $row["Album_Pic"];
                   $Atitle = $row["Title"];
@@ -212,7 +212,7 @@
                     $sel_query="select * from Playlist where Username = '$username'";
                     $result = mysqli_query($con,$sel_query);
                     ?>
-                <div class="col" >
+                <div class="col" align="center">
                   <?php
                     $count--;
                     $row = mysqli_fetch_assoc($result);
@@ -221,9 +221,9 @@
                     <img src="img/playlist.jpg" class="img-responsive" alt="" height="200" width="200">
                     </a>
                     <p></p>
-                    <p><?php echo $Pname; ?></p>
+                    <p><b><?php echo $Pname; ?></b></p>
                 </div>
-                <div class="col" >
+                <div class="col" align="center">
                   <?php
                     if($count!=0) { 
                       $count--;   
@@ -236,7 +236,7 @@
                     <p><?php echo $Pname; ?></p>
                     <?php } ?>
                 </div>
-                <div class="col" >
+                <div class="col" align="center">
                   <?php
                     if($count!=0) { 
                     $row = mysqli_fetch_assoc($result);
@@ -249,7 +249,7 @@
                     <?php } ?>
                 </div>
                 <?php } ?>
-                <div class="col" >
+                <div class="col" align="center">
                   <?php
                     //$row = mysqli_fetch_assoc($result);
                     //$Pname = $row["PName"];?>

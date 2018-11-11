@@ -56,9 +56,12 @@
       </div>
     </nav>
 
-    <div class="container-fluid search-container">
-    <iframe width="794px" height="447px" src=" <?php echo $youtube; ?>">
+    <div class = "row">
+      <div class = "col" align="center">
+        <div class="container-fluid search-container">
+        <iframe width="794px" height="447px" src=" <?php echo $youtube; ?>">
+        </div>
+      </div>
     </div>
-
     </body>
 </html>

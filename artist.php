@@ -74,11 +74,11 @@
             $loc = $row["Picture"];
             $genre = $row["Genre"];?>
       <div class="row">
-        <div class="col">
+        <div class="col" align="center">
           <img class="img-fluid" src="img/<?php echo $loc; ?>" alt=""  height="750" width="500">
         </div>
 
-        <div class="col">
+        <div class="col" align="center">
           <h3 class="my-3">Genre</h3>
           <p><?php echo $genre; ?></p>
           <h3 class="my-3">Artists</h3>
@@ -105,7 +105,7 @@
                if($count%4 == 0) {?>
                 <div class="row">
                 <?php } ?>
-                <div class="col">
+                <div class="col" align="center">
                     <a href="album.php?varname=<?php echo $album_title; ?>">
                     <img class="img-fluid" src="img/<?php echo $Aloc; ?>" alt=""  height="500" width="300">
                     </a>
@@ -127,7 +127,7 @@
                if($count%4 == 0) {?>
                 <div class="row">
                 <?php } ?>
-                <div class="col">
+                <div class="col" align="center">
                     <a href="artist.php?varname=<?php echo $name; ?>">
                     <img class="img-fluid" src="img/<?php echo $loc; ?>" alt=""  height="500" width="300">
                     </a>
