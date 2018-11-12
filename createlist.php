@@ -8,7 +8,7 @@
 
         if(isset($_POST['new']) && $_POST['new']==1){
             $input = $_REQUEST['pname'];
-            $sel_query="select count(*) as num from Playlist where PName = '$input'";
+            $sel_query="select count(*) as num from Playlist where PName = '$input' and Username = '$username'";
             $check = mysqli_query($con,$sel_query);
             $row = mysqli_fetch_assoc($check);
             if($row["num"] == 0) {

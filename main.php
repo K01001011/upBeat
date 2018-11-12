@@ -233,7 +233,7 @@
                     <img src="img/playlist.jpg" class="img-responsive" alt="" height="200" width="200">
                     </a>
                     <p></p>
-                    <p><?php echo $Pname; ?></p>
+                    <p><b><?php echo $Pname; ?></b></p>
                     <?php } ?>
                 </div>
                 <div class="col" align="center">
@@ -245,7 +245,7 @@
                     <img src="img/playlist.jpg" class="img-responsive" alt="" height="200" width="200">
                     </a>
                     <p></p>
-                    <p><?php echo $Pname; ?></p>
+                    <p><b><?php echo $Pname; ?></b></p>
                     <?php } ?>
                 </div>
                 <?php } ?>

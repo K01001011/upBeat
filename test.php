@@ -69,8 +69,8 @@
         <div id = "home">
             <div class = "row">
                 <div class = "col" align="center">
-                <div class = "container-fluid">
-                    <h1>Welcome</h1>
+                <div class = "container-fluid mycontainer">
+                    <h1>Upbeat</h1>
                     <br>
                     <form name="form" method="post" action=""> 
                         <input type="hidden" name="new" value="1" />
