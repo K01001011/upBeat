@@ -40,7 +40,11 @@
     if(isset($_POST['new']) && $_POST['new']==1 && isset($_POST['admin'])){
         $user = $_REQUEST['username'];
         $pass = $_REQUEST['password'];
-        if(strcmp($user, "upbeat") == 0 &&  strcmp($pass, "upbeat") == 0)
+        $search_query="select * from Users where USERNAME='$user'";
+        $result = mysqli_query($con,$search_query)
+        or die(mysqli_error($con));
+        $row = mysqli_fetch_assoc($result);
+        if(strcmp($user, "upbeat") == 0 &&  strcmp(sha1($pass), $row["Password"]) == 0)
         {
             $status = "SUCCESS";
             session_start();

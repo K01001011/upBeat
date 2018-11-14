@@ -6,7 +6,7 @@
         $username = $_SESSION['name'];
         if(isset($_GET["varname"]))
         {
-            $youtube = rawurldecode($_GET['varname']);
+            $youtube = $_GET['varname'];
             $sel_query="select * from Tracks where Youtube_Link = '$youtube'";
             $result = mysqli_query($con,$sel_query);
             $row = $row = mysqli_fetch_assoc($result);
@@ -14,13 +14,25 @@
             if(empty($lyrics))
                 $lyrics = null;
         }
+        if(isset($_POST['new']) && $_POST['new']==1 && isset($_POST['lyrics'])){
+            $lyrics = mysqli_real_escape_string($con, $_REQUEST['lyr']);
+            $ins_query="update Tracks set Lyrics = '$lyrics' where Youtube_Link = '$youtube'";
+            mysqli_query($con,$ins_query)
+                or die(mysqli_error($con));
+            header("Location:play.php?varname=$youtube");
+            exit();
+        }
+        if(isset($_POST['new']) && $_POST['new']==1 && isset($_POST['cancel'])){
+            header("Location:play.php?varname=$youtube");
+            exit();
+        }
         // $sel_query="select * from Playlist where Username = '$username'";
         // $result = mysqli_query($con,$sel_query);
     } else {
         header("Location:test.php");
         exit();
     }
-?> 
+?>
 
 <!DOCTYPE html>
 <html>
@@ -65,15 +77,18 @@
     <div class = "row">
       <div class = "col" align="center">
         <div class="container-fluid search-container">
-          <iframe width="794px" height="447px" src=" <?php echo $youtube; ?>"></iframe>
-          <br>
-          <p><?php echo nl2br($lyrics); ?></p>
-          <br>
-          <a href = "addlrc.php?varname=<?php echo $youtube; ?>"><button  name="lyrics" type="submit" class="btn btn-primary">EDIT LYRICS</button></a>
+                    <form name="form" method="post" action=""> 
+                        <input type="hidden" name="new" value="1" />
+                        <textarea name="lyr" rows="15" cols="120">
+                            <?php echo $lyrics; ?>
+                        </textarea> 
+                        <br>
+                        <button name="cancel" type="submit" class="btn btn-primary">CANCEL</button>
+                        <button name="lyrics" type="submit" class="btn btn-primary">SUBMIT</button>
+                    </form>
         </div>
       </div>
     </div>
-
-    
     </body>
 </html>
+
