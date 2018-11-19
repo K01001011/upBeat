@@ -118,7 +118,8 @@
       </div>
     </nav>
 
-    <div id = "home">
+    <div id = "landing">
+        <div class = "mycontainer">
         <div class = "row">
             <div class = "col" align="center">
                     <form name="form" method="post" action=""> 
@@ -155,6 +156,7 @@
                     </form>
                     <p style="color:#FF0000;"><?php echo $status2; ?></p>
             </div>
+        </div>
         </div>
     </div>
 

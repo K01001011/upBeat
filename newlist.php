@@ -2,6 +2,7 @@
     require('db.php');
     session_start();
     $status[] = "";
+    $search = "";
 
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         $username = $_SESSION['name'];
@@ -16,7 +17,7 @@
 
 
         if(isset($_POST['new']) && $_POST['new']==1){
-            $search = $_REQUEST['search'];
+            $search = (isset($_REQUEST['search'])?$_REQUEST['search']:"");
             $search_query="select * from Tracks where Track_Name like '%{$search}%'";
             $result = mysqli_query($con,$search_query);
             $status[] = "";
